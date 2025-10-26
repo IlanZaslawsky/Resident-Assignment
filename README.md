@@ -4,8 +4,14 @@ TypeScript + Playwright test automation for Senior QA Engineer position.
 
 ## What's Tested
 
-**UI Test**: Awara Sleep website - homepage → mattress page → add to cart  
-**API Test**: Products endpoint - brand filter + specific product lookup
+**UI Tests**:
+- Load Awara Sleep home page
+- Load mattress product page
+- Add mattress to cart & verify count
+
+**API Tests**:
+- Filter products by brand (Awara)
+- Find specific product by name & brand
 
 ## Project Structure
 
