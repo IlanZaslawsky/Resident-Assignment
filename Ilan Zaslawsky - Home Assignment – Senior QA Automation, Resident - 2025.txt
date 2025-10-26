@@ -1,0 +1,40 @@
+Home Assignment – Senior QA Automation
+
+
+Introduction:
+The task is designed for a Senior QA Automation position at Resident and consists of three parts. It is intended to assess the key professional knowledge and skills required for this role. Please complete the assignment using JavaScript/TypeScript with the Playwright framework.
+
+
+Task:
+1. UI test
+Please create a JS/TS-based test. Use E2EUI-Tests as a User-Agent.
+Follow those steps:  
+1. Open https://qa.awarasleep.com/-> make sure to check that the page opens
+2. Click the “Shop mattress” button on the Hero Banner-> check you are on / mattress
+3. Add the mattress to the cart-> Check the mattress has been added to the cart
+2. API test
+Create a JS/TS-based test with API GET operations around the products flow using the following endpoint: https://qa-api.residenthome.com/
+Follow those steps:  
+1. /products?brand=awara -> status.result.data length > 0
+2. /products?name=the-awara-hybrid-mattress-30&lang=en&brand=awara  -> status.result.data length = 1
+
+
+For each step, perform a response status check to ensure it returns 200.
+3. Additional task
+1. Create a new GitHub repository and place the testing code there.
+2. Include clear instructions on how to execute the tests in a README.md file.
+3. Provide a simple tool for presenting the test results (e.g., Allure or similar).
+4.  Set up CI/CD automation with GitHub Actions:
+* Run tests on each commit.
+* Uploading test artifacts will be considered a plus.
+
+
+Please make sure to include and send the GitHub repository link as well as the assignment via email. 
+
+
+If you have any questions, please feel free to reach out to us directly. 
+
+
+Thank you for taking the time to fill out our home assignment. 
+Good luck,
+Resident team

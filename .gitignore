@@ -1,0 +1,14 @@
+node_modules/
+dist/
+allure-results/
+allure-report/
+test-results/
+playwright-report/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+Thumbs.db
+coverage/
+.nyc_output/
