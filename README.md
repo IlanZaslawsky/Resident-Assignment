@@ -1,96 +1,51 @@
 # Resident QA Automation Assignment
 
-A simple QA automation solution for the Senior QA Automation Engineer position at Resident, using JavaScript/TypeScript with Playwright framework.
+TypeScript + Playwright test automation for Senior QA Engineer position.
 
-### 1. UI Test
-- **Technology**: JavaScript/TypeScript with Playwright
-- **User-Agent**: E2EUI-Tests
-- **Test Steps**:
-  1. Open https://qa.awarasleep.com/ → verify page opens
-  2. Navigate to /mattress page (equivalent to clicking "Shop Mattress" button) → verify navigation to /mattress
-  3. Add mattress to cart → verify mattress added to cart
+## What's Tested
 
-### 2. API Test
-- **Technology**: JavaScript/TypeScript with Playwright API testing
-- **Base URL**: https://qa-api.residenthome.com/
-- **Test Steps**:
-  1. GET /products?brand=awara → verify data length > 0
-  2. GET /products?name=the-awara-hybrid-mattress-30&lang=en&brand=awara → verify data length = 1
-- **Status Verification**: All endpoints return 200 status
+**UI Test**: Awara Sleep website - homepage → mattress page → add to cart  
+**API Test**: Products endpoint - brand filter + specific product lookup
 
 ## Project Structure
 
 ```
-resident-qa-automation-assignment/
-├── .github/workflows/ci.yml          # GitHub Actions CI/CD
+├── pages/              # Page Object Model
 ├── tests/
-│   ├── ui/awara-sleep-ui.spec.ts    # UI test
-│   └── api/resident-home-api.spec.ts # API test
-├── package.json                      # Dependencies
-├── playwright.config.ts              # Playwright configuration
-├── tsconfig.json                     # TypeScript configuration
-└── README.md                         # This file
+│   ├── ui/            # UI tests
+│   └── api/           # API tests
+├── .github/workflows/ # CI/CD pipeline
+└── playwright.config.ts
 ```
 
 ## Quick Start
 
-### Prerequisites
-- Node.js 18.x or higher
-- npm package manager
-
-### Installation
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd resident-qa-automation-assignment
-
-# Install dependencies
 npm install
-
-# Install Playwright browsers
 npm run install:browsers
-```
-
-## Running Tests
-
-### Run All Tests
-```bash
 npm test
 ```
 
-### Run UI Tests Only
-```bash
-npm run test:ui
-```
+## Commands
 
-### Run API Tests Only
-```bash
-npm run test:api
-```
+| Command | Action |
+|---------|--------|
+| `npm test` | Run all tests |
+| `npm run test:ui` | UI tests only |
+| `npm run test:api` | API tests only |
+| `npm run test:report` | View HTML report |
 
-### View Test Report
-```bash
-npm run test:report
-```
+## CI/CD
 
-## Test Results
+GitHub Actions runs tests on every push/PR with:
+- Browser caching
+- Parallel execution
+- Artifact upload
+- Automatic retries
 
-The project uses Playwright's built-in HTML reporter for test results visualization. After running tests, you can view the detailed HTML report with:
+## Tech Stack
 
-```bash
-npm run test:report
-```
-
-This will open a comprehensive HTML report showing:
-- Test execution results
-- Screenshots on failure
-- Video recordings
-- Test traces and debugging information
-
-## CI/CD Pipeline
-
-The GitHub Actions workflow (`.github/workflows/ci.yml`) provides:
-- Automated testing on each commit
-- Multi-browser testing (Chrome, Firefox, Safari)
-- Test artifact upload
-- Playwright HTML report generation
+- Playwright 1.40+
+- TypeScript 5.3+
+- Node.js 18+
+- Page Object Model pattern
