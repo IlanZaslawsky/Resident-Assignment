@@ -28,7 +28,7 @@ export class MattressPage extends BasePage {
 
   async verifyPageLoaded() {
     logger.verify('Verifying mattress page loaded');
-    await expect(this.page).toHaveURL(/.*\/mattress.*/);
+    await expect(this.page).toHaveURL('/mattress');
     logger.info('Mattress page verified');
   }
 
