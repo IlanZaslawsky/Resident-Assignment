@@ -19,16 +19,18 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         userAgent: 'E2EUI-Tests'
       },
+      testMatch: '**/ui/**/*.spec.ts',
     },
     {
       name: 'api',
       use: {
         baseURL: 'https://qa-api.residenthome.com',
       },
+      testMatch: '**/api/**/*.spec.ts',
     },
   ],
 });
